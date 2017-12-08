@@ -65,7 +65,7 @@ class FetchResultController: NSFetchedResultsController<Journal>, NSFetchedResul
 
             guard let indexPath = indexPath else { return }
 
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.deleteRows(at: [indexPath], with: .none)
 
         case .update, .move:
 
@@ -77,6 +77,8 @@ class FetchResultController: NSFetchedResultsController<Journal>, NSFetchedResul
     }
 
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+
         tableView.endUpdates()
+
     }
 }

@@ -51,9 +51,15 @@ class DataSource: NSObject, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: "JournalTableViewCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "JournalTableViewCell", for: indexPath) as? JournalTableViewCell else {
+            return UITableViewCell()
+        }
 
-        return configureCell(cell, at: indexPath)
+        let journal = fetchedResultsController.object(at: indexPath)
+
+        cell.titleLabel.text = journal.title
+
+        return cell
     }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -64,14 +70,5 @@ class DataSource: NSObject, UITableViewDataSource {
 
         context.saveChanges()
 
-    }
-
-    private func configureCell(_ cell: UITableViewCell, at indexPath: IndexPath) -> UITableViewCell {
-
-        let journal = fetchedResultsController.object(at: indexPath)
-
-        // cell.textLabel?.text = journal.text
-
-        return cell
     }
 }
