@@ -53,6 +53,7 @@ class JournalTableViewCell: UITableViewCell {
         self.photoImageViewShadow.layer.shadowColor = UIColor.Custom.coolGrey.cgColor
 
         self.photoImageViewShadow.layer.shadowPath =
+
             UIBezierPath(roundedRect: photoImageViewShadow.bounds, cornerRadius: 10).cgPath
 
     }
@@ -72,11 +73,5 @@ class JournalTableViewCell: UITableViewCell {
         self.seperatorCircleView.textColor = UIColor.Custom.coolGrey
 
     }
-
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//        // Configure the view for the selected state
-//    }
 
 }

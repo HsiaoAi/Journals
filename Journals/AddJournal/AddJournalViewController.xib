@@ -35,7 +35,7 @@
                     <rect key="frame" x="22" y="383.5" width="331" height="35.5"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rvo-8x-kmv">
                     <rect key="frame" x="22" y="429" width="331" height="0.5"/>
@@ -47,7 +47,7 @@
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" usesAttributedText="YES" placeholder="Content" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eVY-4D-RkF">
                     <rect key="frame" x="22" y="439" width="331" height="160"/>
                     <attributedString key="attributedText"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3g-C2-IlY">
                     <rect key="frame" x="108" y="611" width="158" height="48"/>

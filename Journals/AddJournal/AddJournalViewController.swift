@@ -41,6 +41,8 @@ class AddJournalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupContentTextField()
+
         setupSaveButton()
 
         setupCancelButton()
@@ -53,15 +55,15 @@ class AddJournalViewController: UIViewController {
 
 }
 
-// CoreDate
-
-extension AddJournalViewController {
-
-}
-
 // Setup UI functions
 
 extension AddJournalViewController {
+
+    func setupContentTextField() {
+
+        s
+
+    }
 
     func setupSaveButton() {
 

@@ -30,7 +30,21 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var saveButton: UIButton!
 
+    @IBAction func pickImage(_ sender: UIButton) {
+
+        print("touch")
+
+        self.imagePicker.allowsEditing = false
+
+        self.imagePicker.sourceType = .photoLibrary
+
+        present(imagePicker, animated: true, completion: nil)
+
+    }
+
     var managedObjectContext: NSManagedObjectContext!
+
+    let imagePicker = UIImagePickerController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,6 +139,32 @@ extension DetailViewController {
 
         self.cancelButton.addTarget(self, action: #selector(handelCancel), for: .touchUpInside)
 
+    }
+
+}
+
+// UIImagePickerControllerDelegate
+
+extension DetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
+
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+
+            self.photoImageView.contentMode = .scaleAspectFill
+
+            self.photoImageView.image = pickedImage
+
+            self.addPicLabel.text = ""
+
+        }
+
+        dismiss(animated: true, completion: nil)
+    }
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+
+        dismiss(animated: true, completion: nil)
     }
 
 }

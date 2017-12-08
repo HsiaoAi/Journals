@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Journals/AddJournal/AddJournalViewController.swift"
-            timestampString = "534410454.596403"
+            timestampString = "534411660.167304"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "handelSave()"
             landmarkType = "7">
          </BreakpointContent>
