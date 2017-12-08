@@ -11,6 +11,7 @@
 		87D034F31FDA263A00F67520 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D034F21FDA263A00F67520 /* LandingViewController.swift */; };
 		87D034F81FDA263A00F67520 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87D034F71FDA263A00F67520 /* Assets.xcassets */; };
 		87D034FB1FDA263A00F67520 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87D034F91FDA263A00F67520 /* LaunchScreen.storyboard */; };
+		87D035071FDA311F00F67520 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D035061FDA311F00F67520 /* UIColorExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		87D034F71FDA263A00F67520 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87D034FA1FDA263A00F67520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87D034FC1FDA263A00F67520 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87D035061FDA311F00F67520 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				87D034F71FDA263A00F67520 /* Assets.xcassets */,
 				87D034F91FDA263A00F67520 /* LaunchScreen.storyboard */,
 				87D034FC1FDA263A00F67520 /* Info.plist */,
+				87D035061FDA311F00F67520 /* UIColorExtensions.swift */,
 			);
 			path = Journals;
 			sourceTree = "<group>";
@@ -71,6 +74,7 @@
 				87D034E91FDA263A00F67520 /* Sources */,
 				87D034EA1FDA263A00F67520 /* Frameworks */,
 				87D034EB1FDA263A00F67520 /* Resources */,
+				87D035051FDA2CEB00F67520 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -127,11 +131,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		87D035051FDA2CEB00F67520 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		87D034E91FDA263A00F67520 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87D035071FDA311F00F67520 /* UIColorExtensions.swift in Sources */,
 				87D034F31FDA263A00F67520 /* LandingViewController.swift in Sources */,
 				87D034F11FDA263A00F67520 /* AppDelegate.swift in Sources */,
 			);

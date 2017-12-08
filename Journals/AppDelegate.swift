@@ -13,22 +13,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+
         // NavigationController
         let landingController = LandingViewController()
-        
+
         let navigationController = UINavigationController(rootViewController: landingController)
-        
+
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        
+
         self.window?.rootViewController = navigationController
-        
+
         self.window?.makeKeyAndVisible()
-        
+
+        // NavigationController Appearance
+
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSAttributedStringKey.kern: -0.5
+        ]
+
         return true
     }
 
 }
-
