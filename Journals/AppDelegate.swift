@@ -18,8 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // NavigationController
         let landingController = LandingViewController()
+        
+        let navigationController = UINavigationController(rootViewController: landingController)
+        
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
+        self.window?.rootViewController = navigationController
+        
+        self.window?.makeKeyAndVisible()
         
         return true
     }
