@@ -24,19 +24,62 @@ class AddJournalViewController: UIViewController {
 
     @IBOutlet weak var addPicLabel: UILabel!
 
+    var imagePickerControllerSourceType: UIImagePickerControllerSourceType = .camera
+
     @IBAction func pickImage(_ sender: UIButton) {
 
         self.imagePicker.allowsEditing = false
 
-        self.imagePicker.sourceType = .photoLibrary
+        confirm()
 
-        present(imagePicker, animated: true, completion: nil)
+    }
 
+    func confirm() {
+
+        let alertController = UIAlertController(
+            title: "",
+            message: "How do you want to add picture?",
+            preferredStyle: .alert)
+
+        let photoAction = UIAlertAction(
+            title: "Photo",
+            style: .default,
+            handler: {
+                _ in
+
+                print("photo")
+
+                self.imagePickerControllerSourceType = .photoLibrary
+
+                self.present(self.imagePicker, animated: true, completion: nil)
+        })
+
+        alertController.addAction(photoAction)
+
+        let cameraAction = UIAlertAction(
+            title: "Camera",
+            style: .default,
+            handler: {
+                _ in
+
+                self.imagePickerControllerSourceType = .camera
+
+                self.present(self.imagePicker, animated: true, completion: nil)
+
+        })
+        alertController.addAction(cameraAction)
+
+        self.present(
+            alertController,
+            animated: true,
+            completion: nil)
     }
 
     var managedObjectContext: NSManagedObjectContext!
 
     let imagePicker = UIImagePickerController()
+
+    var pickedImage: UIImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -138,6 +181,8 @@ extension AddJournalViewController: UIImagePickerControllerDelegate, UINavigatio
 
             self.photoImageView.contentMode = .scaleAspectFill
 
+            self.pickedImage = pickedImage
+
             self.photoImageView.image = pickedImage
 
             self.addPicLabel.text = ""
@@ -187,12 +232,6 @@ extension AddJournalViewController {
 
         let content = self.contentTextField.text ?? ""
 
-        let photo = self.photoImageView.image ?? UIImage()
-
-        guard let imageData = UIImagePNGRepresentation(photo) as NSData? else {
-            print("No pic"); return
-        }
-
         let createDate = NSDate()
 
         guard let journal = NSEntityDescription.insertNewObject(forEntityName: "Journal", into: managedObjectContext) as? Journal else {
@@ -208,7 +247,11 @@ extension AddJournalViewController {
 
         journal.isCompleted = true
 
-        journal.photo = imageData
+        if let photo = self.pickedImage, let imageData = UIImagePNGRepresentation(photo) as NSData? {
+
+            journal.photo = imageData
+
+        }
 
         managedObjectContext.saveChanges()
 

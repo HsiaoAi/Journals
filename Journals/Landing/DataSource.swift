@@ -59,21 +59,25 @@ class DataSource: NSObject, UITableViewDataSource {
 
         cell.titleLabel.text = journal.title
 
-        print("Phoyo: \(journal.photo)")
-
         guard
             let photo = journal.photo,
+
             let imageData = journal.photo as Data?,
+
             let image = UIImage(data: imageData) else {
-                print("NOOOOO")
+
                 cell.photoImageView.tintColor = UIColor.Custom.coolGrey
 
                 cell.photoImageView.contentMode = .center
 
                 cell.photoImageView.image = #imageLiteral(resourceName: "icon-photo").withRenderingMode(.alwaysTemplate)
 
+                cell.photoImageViewShadow.layer.shadowColor = UIColor.white.cgColor
+
                 return cell
         }
+
+         print("Phoyo: \(imageData)")
 
         cell.photoImageView.image = image
 

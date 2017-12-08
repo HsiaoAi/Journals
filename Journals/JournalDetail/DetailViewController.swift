@@ -18,6 +18,8 @@ class DetailViewController: UIViewController {
 
     var context: NSManagedObjectContext!
 
+    var pickedImage: UIImage?
+
     @IBOutlet weak var addPicLabel: UILabel!
 
     @IBOutlet weak var cancelButton: UIButton!
@@ -30,18 +32,56 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var saveButton: UIButton!
 
-    @IBAction func pickImage(_ sender: UIButton) {
+    var imagePickerControllerSourceType: UIImagePickerControllerSourceType = .camera
 
-        print("touch")
+    @IBAction func pickImage(_ sender: UIButton) {
 
         self.imagePicker.allowsEditing = false
 
-        self.imagePicker.sourceType = .photoLibrary
-
-        present(imagePicker, animated: true, completion: nil)
+        confirm()
 
     }
 
+    func confirm() {
+
+        let alertController = UIAlertController(
+            title: "",
+            message: "How do you want to add picture?",
+            preferredStyle: .alert)
+
+        let photoAction = UIAlertAction(
+            title: "Photo",
+            style: .default,
+            handler: {
+                _ in
+
+                print("photo")
+
+                self.imagePickerControllerSourceType = .photoLibrary
+
+                self.present(self.imagePicker, animated: true, completion: nil)
+        })
+
+        alertController.addAction(photoAction)
+
+        let cameraAction = UIAlertAction(
+            title: "Camera",
+            style: .default,
+            handler: {
+                _ in
+
+                self.imagePickerControllerSourceType = .camera
+
+                self.present(self.imagePicker, animated: true, completion: nil)
+
+        })
+        alertController.addAction(cameraAction)
+
+        self.present(
+            alertController,
+            animated: true,
+            completion: nil)
+    }
     var managedObjectContext: NSManagedObjectContext!
 
     let imagePicker = UIImagePickerController()
@@ -73,8 +113,6 @@ extension DetailViewController {
 
         self.contentTextField.textColor = UIColor.Custom.slate
 
-        self.contentTextField.text = "Content"
-
         self.contentTextField.delegate = self
 
         self.contentTextField.textAlignment = .natural
@@ -105,7 +143,6 @@ extension DetailViewController {
 
         self.saveButton.addTarget(self, action: #selector(handelSave), for: .touchUpInside)
 
-        //handelSave
     }
 
     func setupPhotoImageView() {
@@ -120,22 +157,21 @@ extension DetailViewController {
 
         self.photoImageView.tintColor = UIColor.Custom.coolGrey
 
-        guard let imageData = selectedJournal?.photo as Data?,
+        self.photoImageView.contentMode = .center
 
-            let image = UIImage(data: imageData) else {
+        self.photoImageView.image = #imageLiteral(resourceName: "icon-photo").withRenderingMode(.alwaysTemplate)
 
-                self.photoImageView.contentMode = .center
+        if let  photo = selectedJournal?.photo as Data?,
 
-                self.photoImageView.image = #imageLiteral(resourceName: "icon-photo").withRenderingMode(.alwaysTemplate)
+            let image = UIImage(data: photo) {
 
-                return
+            self.photoImageView.image = image
+
+            self.photoImageView.contentMode = .scaleToFill
+
+            self.addPicLabel.text = ""
+
         }
-
-        self.photoImageView.image = image
-
-        self.photoImageView.contentMode = .scaleToFill
-
-        self.addPicLabel.text = ""
 
     }
 
@@ -185,6 +221,8 @@ extension DetailViewController: UIImagePickerControllerDelegate, UINavigationCon
 
             self.photoImageView.contentMode = .scaleAspectFill
 
+            self.pickedImage = pickedImage
+
             self.photoImageView.image = pickedImage
 
             self.addPicLabel.text = ""
@@ -217,9 +255,12 @@ extension DetailViewController {
 
         let content = self.contentTextField.text ?? ""
 
-        guard let journal = self.selectedJournal else {
-            print("here")
-            return
+        guard let journal = self.selectedJournal else { return }
+
+        if let photo = self.pickedImage, let imageData = UIImagePNGRepresentation(photo) as NSData? {
+
+            journal.photo = imageData
+
         }
 
         journal.title = title
