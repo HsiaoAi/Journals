@@ -7,13 +7,42 @@
 //
 
 import UIKit
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    // MARK: Property
+    
     var window: UIWindow?
+    
+    var persistenceManager: PersistenceManager?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        // Core Data
+        
+        let persistenceManager = PersistenceManager(
+            container: NSPersistentContainer(name: "Main")
+        )
+        
+        persistenceManager.container.loadPersistentStores { _, error in
+            
+            if let error = error {
+                
+                // Todo: error handling.
+                
+                print("\(error)")
+                
+                return
+                
+            }
+            
+        }
+        
+        
+        
+        self.persistenceManager = persistenceManager
 
         // NavigationController
         let landingTableViewController = LandingTableViewController()
