@@ -22,7 +22,21 @@ class AddJournalViewController: UIViewController {
 
     @IBOutlet weak var saveButton: UIButton!
 
+    @IBOutlet weak var addPicLabel: UILabel!
+
+    @IBAction func pickImage(_ sender: UIButton) {
+
+        self.imagePicker.allowsEditing = false
+
+        self.imagePicker.sourceType = .photoLibrary
+
+        present(imagePicker, animated: true, completion: nil)
+
+    }
+
     var managedObjectContext: NSManagedObjectContext!
+
+    let imagePicker = UIImagePickerController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +47,7 @@ class AddJournalViewController: UIViewController {
 
         setupPhotoImageView()
 
-        print("AddTaskController Context: \(managedObjectContext.description)")
+        self.imagePicker.delegate = self
 
     }
 
@@ -100,6 +114,32 @@ extension AddJournalViewController {
 
         self.cancelButton.addTarget(self, action: #selector(handelCancel), for: .touchUpInside)
 
+    }
+
+}
+
+// UIImagePickerControllerDelegate
+
+extension AddJournalViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
+
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+
+            self.photoImageView.contentMode = .scaleAspectFill
+
+            self.photoImageView.image = pickedImage
+
+            self.addPicLabel.text = ""
+
+        }
+
+        dismiss(animated: true, completion: nil)
+    }
+
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+
+        dismiss(animated: true, completion: nil)
     }
 
 }
