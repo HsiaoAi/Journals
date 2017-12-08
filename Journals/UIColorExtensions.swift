@@ -16,5 +16,7 @@ extension UIColor {
 
         static let dustyOrange = UIColor(red: 237 / 255, green: 96 / 255, blue: 81 / 255, alpha: 1)
 
+        static let coolGrey = UIColor(red: 171 / 255, green: 179 / 255, blue: 176 / 255, alpha: 1)
+
     }
 }

@@ -20,20 +20,62 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="211.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeJ-Z1-vpd">
-                        <rect key="frame" x="19" y="10" width="337.5" height="139.5"/>
-                        <state key="normal" title="Button"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeJ-Z1-vpd">
+                        <rect key="frame" x="19.5" y="10" width="337.5" height="139.5"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="Button" image="icon-photo"/>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cras justo oditiona" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1o-Ra-dT7">
+                        <rect key="frame" x="30" y="165.5" width="315" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yfw-A5-UVB">
+                        <rect key="frame" x="30" y="201" width="315" height="0.5"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="Mwe-gk-YBE"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="◦" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1u-Kx-2tS">
+                        <rect key="frame" x="184" y="195.5" width="8" height="8"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="8" id="CO8-Ow-TEC"/>
+                            <constraint firstAttribute="width" constant="8" id="eod-ci-6Pe"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="F1o-Ra-dT7" secondAttribute="trailing" constant="30" id="8Vy-pr-99W"/>
+                    <constraint firstItem="Yfw-A5-UVB" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.84" id="Be0-wj-OD3"/>
+                    <constraint firstAttribute="bottom" secondItem="Yfw-A5-UVB" secondAttribute="bottom" constant="9.8000000000000007" id="Czf-9l-YxF"/>
+                    <constraint firstItem="d1u-Kx-2tS" firstAttribute="centerX" secondItem="Yfw-A5-UVB" secondAttribute="centerX" id="E11-fx-A3R"/>
                     <constraint firstItem="EeJ-Z1-vpd" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.66" id="J5f-hF-Ojr"/>
                     <constraint firstItem="EeJ-Z1-vpd" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="MLR-Me-Xc8"/>
+                    <constraint firstItem="F1o-Ra-dT7" firstAttribute="top" secondItem="EeJ-Z1-vpd" secondAttribute="bottom" constant="16" id="SXM-sH-lSP"/>
                     <constraint firstItem="EeJ-Z1-vpd" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.9" id="Vea-If-NKm"/>
+                    <constraint firstItem="d1u-Kx-2tS" firstAttribute="centerY" secondItem="Yfw-A5-UVB" secondAttribute="centerY" constant="-1.5" id="Vtg-E1-RAC"/>
                     <constraint firstItem="EeJ-Z1-vpd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="XI3-3b-2jV"/>
+                    <constraint firstItem="F1o-Ra-dT7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="fG7-X3-SMH"/>
+                    <constraint firstItem="Yfw-A5-UVB" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="qXd-rF-5pJ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="-97" y="9"/>
+            <connections>
+                <outlet property="imageButton" destination="EeJ-Z1-vpd" id="D3V-Y2-EJE"/>
+                <outlet property="seperatorCircleView" destination="d1u-Kx-2tS" id="g5f-YE-6V8"/>
+                <outlet property="seperatorView" destination="Yfw-A5-UVB" id="8FO-Ek-9KU"/>
+                <outlet property="titleLabel" destination="F1o-Ra-dT7" id="We0-Pi-nrV"/>
+            </connections>
+            <point key="canvasLocation" x="-97.5" y="9"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="icon-photo" width="44" height="44"/>
+    </resources>
 </document>
