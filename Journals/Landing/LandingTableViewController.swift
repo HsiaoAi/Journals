@@ -123,6 +123,19 @@ extension LandingTableViewController {
         return contentViewHeight / 3
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        let detaulViewController = DetailViewController(nibName: "DetailViewController", bundle: nil)
+
+        let journal = dataSource.object(at: indexPath)
+
+        detaulViewController.selectedJournal = journal
+
+        detaulViewController.context = self.managedObjectContext
+
+        self.present(detaulViewController, animated: true, completion: nil)
+    }
+
 }
 
 // Button Functions

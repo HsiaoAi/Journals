@@ -23,6 +23,8 @@
 		87D0351B1FDA56D900F67520 /* Journal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D035191FDA56D900F67520 /* Journal+CoreDataProperties.swift */; };
 		87D0351D1FDA581900F67520 /* FetchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D0351C1FDA581900F67520 /* FetchResultController.swift */; };
 		87D0351F1FDA5EDC00F67520 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D0351E1FDA5EDC00F67520 /* DataSource.swift */; };
+		87D035231FDA632600F67520 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D035211FDA632600F67520 /* DetailViewController.swift */; };
+		87D035241FDA632600F67520 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D035221FDA632600F67520 /* DetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		87D035191FDA56D900F67520 /* Journal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		87D0351C1FDA581900F67520 /* FetchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchResultController.swift; sourceTree = "<group>"; };
 		87D0351E1FDA5EDC00F67520 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		87D035211FDA632600F67520 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		87D035221FDA632600F67520 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		94DB7682141BB163A9B32227 /* Pods-Journals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journals.release.xcconfig"; path = "Pods/Target Support Files/Pods-Journals/Pods-Journals.release.xcconfig"; sourceTree = "<group>"; };
 		C41017E125A7EE405FC9DDDB /* Pods-Journals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journals.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Journals/Pods-Journals.debug.xcconfig"; sourceTree = "<group>"; };
 		CD807C13CD10F40B31C19E2E /* Pods_Journals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Journals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,10 +102,11 @@
 		87D034EF1FDA263A00F67520 /* Journals */ = {
 			isa = PBXGroup;
 			children = (
-				87D035121FDA55AA00F67520 /* CoreData */,
 				87D034F01FDA263A00F67520 /* AppDelegate.swift */,
+				87D035121FDA55AA00F67520 /* CoreData */,
 				87D0350C1FDA359C00F67520 /* Landing */,
 				87D035111FDA54D900F67520 /* AddJournal */,
+				87D035201FDA62C600F67520 /* JournalDetail */,
 				87D034F71FDA263A00F67520 /* Assets.xcassets */,
 				87D034F91FDA263A00F67520 /* LaunchScreen.storyboard */,
 				87D034FC1FDA263A00F67520 /* Info.plist */,
@@ -140,6 +145,15 @@
 				87D0351C1FDA581900F67520 /* FetchResultController.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		87D035201FDA62C600F67520 /* JournalDetail */ = {
+			isa = PBXGroup;
+			children = (
+				87D035211FDA632600F67520 /* DetailViewController.swift */,
+				87D035221FDA632600F67520 /* DetailViewController.xib */,
+			);
+			path = JournalDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +221,7 @@
 			files = (
 				87D035101FDA49C200F67520 /* AddJournalViewController.xib in Resources */,
 				87D034FB1FDA263A00F67520 /* LaunchScreen.storyboard in Resources */,
+				87D035241FDA632600F67520 /* DetailViewController.xib in Resources */,
 				87D034F81FDA263A00F67520 /* Assets.xcassets in Resources */,
 				87D0350B1FDA359400F67520 /* JournalTableViewCell.xib in Resources */,
 			);
@@ -289,6 +304,7 @@
 				87D035171FDA562500F67520 /* Journal.xcdatamodeld in Sources */,
 				87D0351D1FDA581900F67520 /* FetchResultController.swift in Sources */,
 				87D035071FDA311F00F67520 /* UIColorExtensions.swift in Sources */,
+				87D035231FDA632600F67520 /* DetailViewController.swift in Sources */,
 				87D034F31FDA263A00F67520 /* LandingTableViewController.swift in Sources */,
 				87D034F11FDA263A00F67520 /* AppDelegate.swift in Sources */,
 				87D035141FDA55BE00F67520 /* CoreDataStack.swift in Sources */,
