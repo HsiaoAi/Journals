@@ -14,6 +14,8 @@
 		87D035071FDA311F00F67520 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D035061FDA311F00F67520 /* UIColorExtensions.swift */; };
 		87D0350A1FDA359400F67520 /* JournalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D035081FDA359400F67520 /* JournalTableViewCell.swift */; };
 		87D0350B1FDA359400F67520 /* JournalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D035091FDA359400F67520 /* JournalTableViewCell.xib */; };
+		87D0350F1FDA49C200F67520 /* AddJournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D0350D1FDA49C200F67520 /* AddJournalViewController.swift */; };
+		87D035101FDA49C200F67520 /* AddJournalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D0350E1FDA49C200F67520 /* AddJournalViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		87D035061FDA311F00F67520 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		87D035081FDA359400F67520 /* JournalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTableViewCell.swift; sourceTree = "<group>"; };
 		87D035091FDA359400F67520 /* JournalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalTableViewCell.xib; sourceTree = "<group>"; };
+		87D0350D1FDA49C200F67520 /* AddJournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalViewController.swift; sourceTree = "<group>"; };
+		87D0350E1FDA49C200F67520 /* AddJournalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddJournalViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 				87D034F91FDA263A00F67520 /* LaunchScreen.storyboard */,
 				87D034FC1FDA263A00F67520 /* Info.plist */,
 				87D035061FDA311F00F67520 /* UIColorExtensions.swift */,
+				87D0350D1FDA49C200F67520 /* AddJournalViewController.swift */,
+				87D0350E1FDA49C200F67520 /* AddJournalViewController.xib */,
 			);
 			path = Journals;
 			sourceTree = "<group>";
@@ -138,6 +144,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87D035101FDA49C200F67520 /* AddJournalViewController.xib in Resources */,
 				87D034FB1FDA263A00F67520 /* LaunchScreen.storyboard in Resources */,
 				87D034F81FDA263A00F67520 /* Assets.xcassets in Resources */,
 				87D0350B1FDA359400F67520 /* JournalTableViewCell.xib in Resources */,
@@ -171,6 +178,7 @@
 				87D034F31FDA263A00F67520 /* LandingTableViewController.swift in Sources */,
 				87D034F11FDA263A00F67520 /* AppDelegate.swift in Sources */,
 				87D0350A1FDA359400F67520 /* JournalTableViewCell.swift in Sources */,
+				87D0350F1FDA49C200F67520 /* AddJournalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

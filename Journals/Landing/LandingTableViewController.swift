@@ -100,8 +100,6 @@ extension LandingTableViewController {
 
         let naviBarHeight = self.navigationController?.navigationBar.bounds.height ?? 0
 
-        print(naviBarHeight)
-
         let contentViewHeight = UIScreen.main.bounds.height - statusBarHeight - naviBarHeight
 
         return contentViewHeight / 3
