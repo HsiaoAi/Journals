@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LandingViewController: UIViewController {
+class LandingTableViewController: UITableViewController {
 
     lazy var navigationTitleLabel: UILabel = {
 
@@ -37,7 +37,7 @@ class LandingViewController: UIViewController {
 }
 
 // Setup UI functions
-extension LandingViewController {
+extension LandingTableViewController {
     func setupNavigationBar() {
 
         self.navigationController?.navigationBar.topItem?.titleView = self.navigationTitleLabel
@@ -52,7 +52,7 @@ extension LandingViewController {
     }
 }
 
-extension LandingViewController {
+extension LandingTableViewController {
     @objc func addJournal() {
 
     }
