@@ -32,7 +32,7 @@ class LandingTableViewController: UITableViewController {
         super.viewDidLoad()
 
         setupNavigationBar()
-        self.view.backgroundColor = UIColor.red
+        self.view.backgroundColor = UIColor.white
     }
 }
 
