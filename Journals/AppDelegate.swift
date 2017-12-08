@@ -32,6 +32,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NSAttributedStringKey.kern: -0.5
         ]
 
+        let statusBarBackgroundView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 20))
+
+        statusBarBackgroundView.backgroundColor = UIColor.white
+
+        self.window?.rootViewController?.view.addSubview(statusBarBackgroundView)
+
         return true
     }
 

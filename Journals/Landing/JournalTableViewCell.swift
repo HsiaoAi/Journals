@@ -10,8 +10,7 @@ import UIKit
 
 class JournalTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var imageButton: UIButton!
-
+    @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
 
     @IBOutlet weak var seperatorView: UIView!
@@ -19,17 +18,31 @@ class JournalTableViewCell: UITableViewCell {
     @IBOutlet weak var seperatorCircleView: UILabel!
 
     override func awakeFromNib() {
+
         super.awakeFromNib()
-        setupImageButton()
+
+        setupPhotoImageView()
+
         setupTitleLabel()
+
         setupSeperatorView()
     }
 
-    func setupImageButton() {
+    func setupPhotoImageView() {
 
-        self.imageButton.imageView?.contentMode = .center
+        self.photoImageView.tintColor = UIColor.Custom.coolGrey
 
-        self.imageButton.imageView?.image = #imageLiteral(resourceName: "icon-photo").withRenderingMode(.alwaysTemplate)
+        self.photoImageView.contentMode = .center
+
+        self.photoImageView.image = #imageLiteral(resourceName: "icon-photo").withRenderingMode(.alwaysTemplate)
+
+        self.photoImageView.layer.cornerRadius = 8
+
+        self.photoImageView.layer.shadowOpacity = 1
+
+        self.photoImageView.layer.shadowOffset = CGSize(width: 0, height: 0)
+
+        self.photoImageView.layer.shadowRadius = 10
     }
 
     func setupTitleLabel() {
@@ -48,10 +61,10 @@ class JournalTableViewCell: UITableViewCell {
 
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//
+//        // Configure the view for the selected state
+//    }
 
 }
