@@ -18,7 +18,7 @@ extension UIColor {
 
         static let coolGrey = UIColor(red: 171 / 255, green: 179 / 255, blue: 176 / 255, alpha: 1)
 
-        static let buttonBackground = UIColor(red: 62 / 255, green: 62 / 255, blue: 62 / 255, alpha: 0.5)
+        static let transparentGrey = UIColor(red: 62 / 255, green: 62 / 255, blue: 62 / 255, alpha: 0.5)
 
     }
 }

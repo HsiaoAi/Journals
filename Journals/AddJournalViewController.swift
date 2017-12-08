@@ -31,11 +31,21 @@ class AddJournalViewController: UIViewController {
 
         self.cancelButton.imageView?.image = #imageLiteral(resourceName: "button_close").withRenderingMode(.alwaysTemplate)
 
-        self.cancelButton.imageView?.backgroundColor = UIColor.Custom.buttonBackground
+        self.cancelButton.imageView?.tintColor = UIColor.white
+
+        self.cancelButton.imageView?.backgroundColor = UIColor.clear
 
         self.cancelButton.layer.opacity = 1
 
         self.cancelButton.layer.shadowRadius = 4
+
+        self.cancelButton.addTarget(self, action: #selector(handelCancel), for: .touchUpInside)
+
+    }
+
+    @objc func handelCancel() {
+
+        self.dismiss(animated: true, completion: nil)
 
     }
 

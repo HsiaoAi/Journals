@@ -120,5 +120,9 @@ extension LandingTableViewController {
 extension LandingTableViewController {
     @objc func addJournal() {
 
+        let addJournalViewController = AddJournalViewController(nibName: "AddJournalViewController", bundle: nil)
+
+        self.present(addJournalViewController, animated: true, completion: nil)
+
     }
 }
