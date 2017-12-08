@@ -8,6 +8,7 @@
 
 import UIKit
 import ChameleonFramework
+import CoreData
 
 class AddJournalViewController: UIViewController {
 
@@ -21,13 +22,50 @@ class AddJournalViewController: UIViewController {
 
     @IBOutlet weak var saveButton: UIButton!
 
+    var managedObjectContext: NSManagedObjectContext!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        setupSaveButton()
 
         setupCancelButton()
 
         setupPhotoImageView()
 
+        print("AddTaskController Context: \(managedObjectContext.description)")
+
+    }
+
+}
+
+// CoreDate
+
+extension AddJournalViewController {
+
+}
+
+// Setup UI functions
+
+extension AddJournalViewController {
+
+    func setupSaveButton() {
+
+        self.saveButton.tintColor = UIColor.white
+
+        self.saveButton.layer.cornerRadius = 22
+
+        self.saveButton.backgroundColor = UIColor.Custom.dustyOrange
+
+        self.saveButton.layer.shadowOpacity = 1
+
+        self.saveButton.layer.shadowRadius = 10
+
+        self.saveButton.layer.shadowColor = UIColor.Custom.blush.cgColor
+
+        self.saveButton.addTarget(self, action: #selector(handelSave), for: .touchUpInside)
+
+        //handelSave
     }
 
     func setupPhotoImageView() {
@@ -64,7 +102,40 @@ class AddJournalViewController: UIViewController {
 
     }
 
+}
+
+// Button Functions and others
+
+extension AddJournalViewController {
+
     @objc func handelCancel() {
+
+        self.dismiss(animated: true, completion: nil)
+
+    }
+
+    @objc func handelSave() {
+
+        let title = self.titleTextField.text ?? ""
+
+        let content = self.contentTextField.text ?? ""
+
+        let createDate = NSDate()
+
+        guard let journal = NSEntityDescription.insertNewObject(forEntityName: "Journal", into: managedObjectContext) as? Journal else {
+            print("here")
+            return
+        }
+
+        journal.title = title
+
+        journal.content = content
+
+        journal.createDate = createDate
+
+        journal.isCompleted = true
+
+        managedObjectContext.saveChanges()
 
         self.dismiss(animated: true, completion: nil)
 

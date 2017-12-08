@@ -7,9 +7,21 @@
 //
 
 import UIKit
+import CoreData
 
 class LandingTableViewController: UITableViewController {
 
+    // CoreData properties
+
+    let managedObjectContext = CoreDataStack().managedObjectContext
+
+    lazy var dataSource: DataSource = {
+
+        return DataSource(tableView: self.tableView, context: self.managedObjectContext)
+
+    }()
+
+    // UI properties
     lazy var navigationTitleLabel: UILabel = {
 
         let label = UILabel()
@@ -31,11 +43,23 @@ class LandingTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tableView.dataSource = dataSource
+
         setupNavigationBar()
 
         setupTableView()
 
     }
+}
+
+// MARK: UITableViewDelegate
+
+extension LandingTableViewController {
+
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .delete
+    }
+
 }
 
 // Setup UI functions
@@ -84,15 +108,9 @@ extension LandingTableViewController {
     }
 }
 
-// MARK: - Table view data source
+// MARK: - Table view heightForRowAt
 
 extension LandingTableViewController {
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        return 5
-
-    }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
@@ -105,15 +123,6 @@ extension LandingTableViewController {
         return contentViewHeight / 3
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: "JournalTableViewCell",
-            for: indexPath
-            ) as? JournalTableViewCell else { return JournalTableViewCell() }
-
-        return cell
-    }
-
 }
 
 // Button Functions
@@ -121,6 +130,8 @@ extension LandingTableViewController {
     @objc func addJournal() {
 
         let addJournalViewController = AddJournalViewController(nibName: "AddJournalViewController", bundle: nil)
+
+        addJournalViewController.managedObjectContext = self.managedObjectContext
 
         self.present(addJournalViewController, animated: true, completion: nil)
 
