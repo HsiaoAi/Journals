@@ -45,8 +45,6 @@ class AddJournalViewController: UIViewController {
             handler: {
                 _ in
 
-                print("photo")
-
                 self.imagePicker.sourceType = .photoLibrary
 
                 self.present(self.imagePicker, animated: true, completion: nil)
@@ -60,8 +58,6 @@ class AddJournalViewController: UIViewController {
             handler: {
 
                 _ in
-
-                print("camera")
 
                 self.imagePicker.sourceType = .camera
 
@@ -112,9 +108,9 @@ extension AddJournalViewController {
 
         self.contentTextField.autocapitalizationType = .none
 
-        self.contentTextField.textColor = UIColor.Custom.slate
+        self.contentTextField.textColor = UIColor.Custom.coolGrey
 
-        self.contentTextField.text = "Content"
+        self.contentTextField.text = "No Content"
 
         self.contentTextField.delegate = self
 
@@ -211,6 +207,8 @@ extension AddJournalViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
 
             textView.text = nil
+
+            self.contentTextField.textColor = UIColor.Custom.slate
 
     }
 

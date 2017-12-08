@@ -125,7 +125,9 @@ extension LandingTableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        let detailViewController = DetailViewController(nibName: "DetailViewController", bundle: nil)
+        //let detailViewController = DetailViewController(nibName: "DetailViewController", bundle: nil)
+
+        let detailViewController = DetailViewController(nibName: "AddJournalViewController", bundle: nil)
 
         let journal = dataSource.object(at: indexPath)
 

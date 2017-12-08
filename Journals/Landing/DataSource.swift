@@ -60,7 +60,7 @@ class DataSource: NSObject, UITableViewDataSource {
         cell.titleLabel.text = journal.title
 
         guard
-            let photo = journal.photo,
+            let _ = journal.photo,
 
             let imageData = journal.photo as Data?,
 

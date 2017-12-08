@@ -106,7 +106,7 @@ class DetailViewController: UIViewController {
 
         setupSelectedJournal()
 
-        print("AddTaskController Context: \(context.description)")
+        self.imagePicker.delegate = self
 
     }
 
