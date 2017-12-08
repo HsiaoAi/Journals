@@ -14,6 +14,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="Journals" customModuleProvider="target">
             <connections>
+                <outlet property="addPicLabel" destination="2Pe-uJ-kqF" id="oEQ-Jh-t8a"/>
                 <outlet property="cancelButton" destination="WyU-jm-rct" id="tRH-Br-TGg"/>
                 <outlet property="contentTextField" destination="WeW-Ic-U6Z" id="wQn-bb-omg"/>
                 <outlet property="photoImageView" destination="wPz-2W-OfV" id="LbR-5T-7le"/>

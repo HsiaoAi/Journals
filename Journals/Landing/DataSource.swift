@@ -59,6 +59,15 @@ class DataSource: NSObject, UITableViewDataSource {
 
         cell.titleLabel.text = journal.title
 
+        guard let imageData = journal.photo as Data?,
+            let image = UIImage(data: imageData) else {
+                return cell
+        }
+
+        cell.photoImageView.image = image
+
+        cell.photoImageView.contentMode = .scaleToFill
+
         return cell
     }
 

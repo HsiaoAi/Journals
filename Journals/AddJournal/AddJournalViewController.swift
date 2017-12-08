@@ -137,7 +137,7 @@ extension AddJournalViewController: UIImagePickerControllerDelegate, UINavigatio
         dismiss(animated: true, completion: nil)
     }
 
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
 
         dismiss(animated: true, completion: nil)
     }
@@ -160,6 +160,12 @@ extension AddJournalViewController {
 
         let content = self.contentTextField.text ?? ""
 
+        let photo = self.photoImageView.image ?? UIImage()
+
+        guard let imageData = UIImagePNGRepresentation(photo) as? NSData else {
+            print("No pic"); return
+        }
+
         let createDate = NSDate()
 
         guard let journal = NSEntityDescription.insertNewObject(forEntityName: "Journal", into: managedObjectContext) as? Journal else {
@@ -174,6 +180,8 @@ extension AddJournalViewController {
         journal.createDate = createDate
 
         journal.isCompleted = true
+
+        journal.photo = imageData
 
         managedObjectContext.saveChanges()
 

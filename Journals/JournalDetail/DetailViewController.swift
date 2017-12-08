@@ -18,6 +18,8 @@ class DetailViewController: UIViewController {
 
     var context: NSManagedObjectContext!
 
+    @IBOutlet weak var addPicLabel: UILabel!
+
     @IBOutlet weak var cancelButton: UIButton!
 
     @IBOutlet weak var photoImageView: UIImageView!
@@ -90,9 +92,22 @@ extension DetailViewController {
 
         self.photoImageView.tintColor = UIColor.Custom.coolGrey
 
-        self.photoImageView.contentMode = .center
+        guard let imageData = selectedJournal?.photo as Data?,
 
-        self.photoImageView.image = #imageLiteral(resourceName: "icon-photo").withRenderingMode(.alwaysTemplate)
+            let image = UIImage(data: imageData) else {
+
+                self.photoImageView.contentMode = .center
+
+                self.photoImageView.image = #imageLiteral(resourceName: "icon-photo").withRenderingMode(.alwaysTemplate)
+
+                return
+        }
+
+        self.photoImageView.image = image
+
+        self.photoImageView.contentMode = .scaleToFill
+
+        self.addPicLabel.text = ""
 
     }
 
