@@ -125,15 +125,15 @@ extension LandingTableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        let detaulViewController = DetailViewController(nibName: "DetailViewController", bundle: nil)
+        let detailViewController = DetailViewController(nibName: "DetailViewController", bundle: nil)
 
         let journal = dataSource.object(at: indexPath)
 
-        detaulViewController.selectedJournal = journal
+        detailViewController.selectedJournal = journal
 
-        detaulViewController.context = self.managedObjectContext
+        detailViewController.context = self.managedObjectContext
 
-        self.present(detaulViewController, animated: true, completion: nil)
+        self.present(detailViewController, animated: true, completion: nil)
     }
 
 }

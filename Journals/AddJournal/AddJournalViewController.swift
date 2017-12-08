@@ -24,13 +24,11 @@ class AddJournalViewController: UIViewController {
 
     @IBOutlet weak var addPicLabel: UILabel!
 
-    var imagePickerControllerSourceType: UIImagePickerControllerSourceType = .camera
-
     @IBAction func pickImage(_ sender: UIButton) {
 
-        self.imagePicker.allowsEditing = false
-
         confirm()
+
+        self.imagePicker.allowsEditing = false
 
     }
 
@@ -49,7 +47,7 @@ class AddJournalViewController: UIViewController {
 
                 print("photo")
 
-                self.imagePickerControllerSourceType = .photoLibrary
+                self.imagePicker.sourceType = .photoLibrary
 
                 self.present(self.imagePicker, animated: true, completion: nil)
         })
@@ -60,13 +58,21 @@ class AddJournalViewController: UIViewController {
             title: "Camera",
             style: .default,
             handler: {
+
                 _ in
 
-                self.imagePickerControllerSourceType = .camera
+                print("camera")
+
+                self.imagePicker.sourceType = .camera
+
+                self.imagePicker.cameraCaptureMode = .photo
+
+                self.imagePicker.modalPresentationStyle = .fullScreen
 
                 self.present(self.imagePicker, animated: true, completion: nil)
 
         })
+
         alertController.addAction(cameraAction)
 
         self.present(

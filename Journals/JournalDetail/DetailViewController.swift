@@ -32,13 +32,13 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var saveButton: UIButton!
 
-    var imagePickerControllerSourceType: UIImagePickerControllerSourceType = .camera
-
     @IBAction func pickImage(_ sender: UIButton) {
 
         self.imagePicker.allowsEditing = false
 
         confirm()
+
+        self.imagePicker.allowsEditing = false
 
     }
 
@@ -57,7 +57,7 @@ class DetailViewController: UIViewController {
 
                 print("photo")
 
-                self.imagePickerControllerSourceType = .photoLibrary
+                self.imagePicker.sourceType = .photoLibrary
 
                 self.present(self.imagePicker, animated: true, completion: nil)
         })
@@ -68,13 +68,21 @@ class DetailViewController: UIViewController {
             title: "Camera",
             style: .default,
             handler: {
+
                 _ in
 
-                self.imagePickerControllerSourceType = .camera
+                print("camera")
+
+                self.imagePicker.sourceType = .camera
+
+                self.imagePicker.cameraCaptureMode = .photo
+
+                self.imagePicker.modalPresentationStyle = .fullScreen
 
                 self.present(self.imagePicker, animated: true, completion: nil)
 
         })
+
         alertController.addAction(cameraAction)
 
         self.present(
@@ -82,6 +90,7 @@ class DetailViewController: UIViewController {
             animated: true,
             completion: nil)
     }
+
     var managedObjectContext: NSManagedObjectContext!
 
     let imagePicker = UIImagePickerController()
