@@ -59,8 +59,19 @@ class DataSource: NSObject, UITableViewDataSource {
 
         cell.titleLabel.text = journal.title
 
-        guard let imageData = journal.photo as Data?,
+        print("Phoyo: \(journal.photo)")
+
+        guard
+            let photo = journal.photo,
+            let imageData = journal.photo as Data?,
             let image = UIImage(data: imageData) else {
+                print("NOOOOO")
+                cell.photoImageView.tintColor = UIColor.Custom.coolGrey
+
+                cell.photoImageView.contentMode = .center
+
+                cell.photoImageView.image = #imageLiteral(resourceName: "icon-photo").withRenderingMode(.alwaysTemplate)
+
                 return cell
         }
 

@@ -26,7 +26,7 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var titleTextField: UITextField!
 
-    @IBOutlet weak var contentTextField: UITextField!
+    @IBOutlet weak var contentTextField: UITextView!
 
     @IBOutlet weak var saveButton: UIButton!
 
@@ -66,6 +66,20 @@ class DetailViewController: UIViewController {
 // Setup UI functions
 
 extension DetailViewController {
+
+    func setupContentTextField() {
+
+        self.contentTextField.autocapitalizationType = .none
+
+        self.contentTextField.textColor = UIColor.Custom.slate
+
+        self.contentTextField.text = "Content"
+
+        self.contentTextField.delegate = self
+
+        self.contentTextField.textAlignment = .natural
+
+    }
 
     func setupSelectedJournal() {
 
@@ -141,6 +155,24 @@ extension DetailViewController {
 
     }
 
+}
+
+// UITextViewDelegate
+
+extension DetailViewController: UITextViewDelegate {
+
+    func textViewDidBeginEditing(_ textView: UITextView) {
+
+        textView.text = nil
+
+    }
+
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+
+        self.view.endEditing(true)
+
+        return true
+    }
 }
 
 // UIImagePickerControllerDelegate

@@ -18,7 +18,7 @@ class AddJournalViewController: UIViewController {
 
     @IBOutlet weak var titleTextField: UITextField!
 
-    @IBOutlet weak var contentTextField: UITextField!
+    @IBOutlet weak var contentTextField: UITextView!
 
     @IBOutlet weak var saveButton: UIButton!
 
@@ -61,7 +61,15 @@ extension AddJournalViewController {
 
     func setupContentTextField() {
 
-        s
+        self.contentTextField.autocapitalizationType = .none
+
+        self.contentTextField.textColor = UIColor.Custom.slate
+
+        self.contentTextField.text = "Content"
+
+        self.contentTextField.delegate = self
+
+        self.contentTextField.textAlignment = .natural
 
     }
 
@@ -144,6 +152,23 @@ extension AddJournalViewController: UIImagePickerControllerDelegate, UINavigatio
         dismiss(animated: true, completion: nil)
     }
 
+}
+
+// UITextViewDelegate
+
+extension AddJournalViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+
+            textView.text = nil
+
+    }
+
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+
+        self.view.endEditing(true)
+
+        return true
+    }
 }
 
 // Button Functions and others
