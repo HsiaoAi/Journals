@@ -85,7 +85,7 @@ extension LandingTableViewController {
 
         self.tableView.showsVerticalScrollIndicator = false
 
-        self.tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+        self.tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 0, right: 0)
 
     }
 

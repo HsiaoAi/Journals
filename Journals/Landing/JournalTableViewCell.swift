@@ -17,6 +17,8 @@ class JournalTableViewCell: UITableViewCell {
 
     @IBOutlet weak var seperatorCircleView: UILabel!
 
+    @IBOutlet weak var photoImageViewShadow: UIImageView!
+
     override func awakeFromNib() {
 
         super.awakeFromNib()
@@ -38,11 +40,21 @@ class JournalTableViewCell: UITableViewCell {
 
         self.photoImageView.layer.cornerRadius = 8
 
-        self.photoImageView.layer.shadowOpacity = 1
+        self.photoImageView.clipsToBounds = true
 
-        self.photoImageView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        self.photoImageViewShadow.layer.shadowOpacity = 1
 
-        self.photoImageView.layer.shadowRadius = 10
+        self.photoImageViewShadow.clipsToBounds = false
+
+        self.photoImageViewShadow.layer.shadowOffset = CGSize.zero
+
+        self.photoImageViewShadow.layer.shadowRadius = 10
+
+        self.photoImageViewShadow.layer.shadowColor = UIColor.Custom.coolGrey.cgColor
+
+        self.photoImageViewShadow.layer.shadowPath =
+            UIBezierPath(roundedRect: photoImageViewShadow.bounds, cornerRadius: 10).cgPath
+
     }
 
     func setupTitleLabel() {

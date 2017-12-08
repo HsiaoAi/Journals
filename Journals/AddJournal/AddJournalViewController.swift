@@ -162,7 +162,7 @@ extension AddJournalViewController {
 
         let photo = self.photoImageView.image ?? UIImage()
 
-        guard let imageData = UIImagePNGRepresentation(photo) as? NSData else {
+        guard let imageData = UIImagePNGRepresentation(photo) as NSData? else {
             print("No pic"); return
         }
 
