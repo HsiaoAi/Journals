@@ -228,7 +228,7 @@ extension DetailViewController: UIImagePickerControllerDelegate, UINavigationCon
 
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
 
-            self.photoImageView.contentMode = .scaleAspectFill
+            self.photoImageView.contentMode = .scaleToFill
 
             self.pickedImage = pickedImage
 
