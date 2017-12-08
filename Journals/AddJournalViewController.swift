@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class AddJournalViewController: UIViewController {
 
@@ -24,6 +25,26 @@ class AddJournalViewController: UIViewController {
         super.viewDidLoad()
 
         setupCancelButton()
+
+        setupPhotoImageView()
+
+    }
+
+    func setupPhotoImageView() {
+
+        self.photoImageView.backgroundColor =
+
+            UIColor(gradientStyle: .radial,
+
+                    withFrame: self.photoImageView.frame,
+
+                    andColors: [UIColor.Custom.slate, UIColor.Custom.darkSlate])
+
+        self.photoImageView.tintColor = UIColor.Custom.coolGrey
+
+        self.photoImageView.contentMode = .center
+
+        self.photoImageView.image = #imageLiteral(resourceName: "icon-photo").withRenderingMode(.alwaysTemplate)
 
     }
 
