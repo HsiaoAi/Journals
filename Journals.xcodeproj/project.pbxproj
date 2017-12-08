@@ -18,6 +18,9 @@
 		87D0350F1FDA49C200F67520 /* AddJournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D0350D1FDA49C200F67520 /* AddJournalViewController.swift */; };
 		87D035101FDA49C200F67520 /* AddJournalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D0350E1FDA49C200F67520 /* AddJournalViewController.xib */; };
 		87D035141FDA55BE00F67520 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D035131FDA55BE00F67520 /* CoreDataStack.swift */; };
+		87D035171FDA562500F67520 /* Journal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 87D035151FDA562500F67520 /* Journal.xcdatamodeld */; };
+		87D0351A1FDA56D900F67520 /* Journal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D035181FDA56D900F67520 /* Journal+CoreDataClass.swift */; };
+		87D0351B1FDA56D900F67520 /* Journal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D035191FDA56D900F67520 /* Journal+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		87D0350D1FDA49C200F67520 /* AddJournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalViewController.swift; sourceTree = "<group>"; };
 		87D0350E1FDA49C200F67520 /* AddJournalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddJournalViewController.xib; sourceTree = "<group>"; };
 		87D035131FDA55BE00F67520 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		87D035161FDA562500F67520 /* Journal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Journal.xcdatamodel; sourceTree = "<group>"; };
+		87D035181FDA56D900F67520 /* Journal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+CoreDataClass.swift"; sourceTree = "<group>"; };
+		87D035191FDA56D900F67520 /* Journal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		94DB7682141BB163A9B32227 /* Pods-Journals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journals.release.xcconfig"; path = "Pods/Target Support Files/Pods-Journals/Pods-Journals.release.xcconfig"; sourceTree = "<group>"; };
 		C41017E125A7EE405FC9DDDB /* Pods-Journals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journals.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Journals/Pods-Journals.debug.xcconfig"; sourceTree = "<group>"; };
 		CD807C13CD10F40B31C19E2E /* Pods_Journals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Journals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,7 +128,10 @@
 		87D035121FDA55AA00F67520 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				87D035181FDA56D900F67520 /* Journal+CoreDataClass.swift */,
+				87D035191FDA56D900F67520 /* Journal+CoreDataProperties.swift */,
 				87D035131FDA55BE00F67520 /* CoreDataStack.swift */,
+				87D035151FDA562500F67520 /* Journal.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -271,11 +280,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87D035171FDA562500F67520 /* Journal.xcdatamodeld in Sources */,
 				87D035071FDA311F00F67520 /* UIColorExtensions.swift in Sources */,
 				87D034F31FDA263A00F67520 /* LandingTableViewController.swift in Sources */,
 				87D034F11FDA263A00F67520 /* AppDelegate.swift in Sources */,
 				87D035141FDA55BE00F67520 /* CoreDataStack.swift in Sources */,
+				87D0351A1FDA56D900F67520 /* Journal+CoreDataClass.swift in Sources */,
 				87D0350A1FDA359400F67520 /* JournalTableViewCell.swift in Sources */,
+				87D0351B1FDA56D900F67520 /* Journal+CoreDataProperties.swift in Sources */,
 				87D0350F1FDA49C200F67520 /* AddJournalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +469,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		87D035151FDA562500F67520 /* Journal.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				87D035161FDA562500F67520 /* Journal.xcdatamodel */,
+			);
+			currentVersion = 87D035161FDA562500F67520 /* Journal.xcdatamodel */;
+			path = Journal.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 87D034E51FDA263900F67520 /* Project object */;
 }
