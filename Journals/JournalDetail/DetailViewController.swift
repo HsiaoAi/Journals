@@ -118,6 +118,8 @@ extension DetailViewController {
 
     func setupContentTextField() {
 
+        self.titleTextField.delegate = self
+
         self.contentTextField.autocapitalizationType = .none
 
         self.contentTextField.textColor = UIColor.Custom.slate
@@ -202,6 +204,16 @@ extension DetailViewController {
 
 }
 
+extension DetailViewController {
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+
+        self.view.endEditing(true)
+
+    }
+
+}
+
 // UITextViewDelegate
 
 extension DetailViewController: UITextViewDelegate {
@@ -210,9 +222,30 @@ extension DetailViewController: UITextViewDelegate {
 
         textView.text = nil
 
+        self.contentTextField.textColor = UIColor.Custom.slate
+
     }
 
-    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+
+        if text == "\n" {
+
+            textView.resignFirstResponder()
+
+            return false
+        }
+
+        return true
+
+    }
+
+}
+
+// Button Functions and others
+
+extension DetailViewController: UITextFieldDelegate {
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 
         self.view.endEditing(true)
 

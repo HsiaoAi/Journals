@@ -10,7 +10,7 @@ import UIKit
 import ChameleonFramework
 import CoreData
 
-class AddJournalViewController: UIViewController, UITextFieldDelegate {
+class AddJournalViewController: UIViewController {
 
     @IBOutlet weak var cancelButton: UIButton!
 
@@ -86,7 +86,7 @@ class AddJournalViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupContentTextField()
+        setupAllTextField()
 
         setupSaveButton()
 
@@ -100,11 +100,23 @@ class AddJournalViewController: UIViewController, UITextFieldDelegate {
 
 }
 
+extension AddJournalViewController {
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+
+        self.view.endEditing(true)
+
+    }
+
+}
+
 // Setup UI functions
 
 extension AddJournalViewController {
 
-    func setupContentTextField() {
+    func setupAllTextField() {
+
+        self.titleTextField.delegate = self
 
         self.contentTextField.autocapitalizationType = .none
 
@@ -204,6 +216,7 @@ extension AddJournalViewController: UIImagePickerControllerDelegate, UINavigatio
 // UITextViewDelegate
 
 extension AddJournalViewController: UITextViewDelegate {
+
     func textViewDidBeginEditing(_ textView: UITextView) {
 
             textView.text = nil
@@ -212,15 +225,32 @@ extension AddJournalViewController: UITextViewDelegate {
 
     }
 
-    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+
+        if text == "\n" {
+
+            textView.resignFirstResponder()
+
+            return false
+        }
+
+        return true
+
+    }
+
+}
+
+// Button Functions and others
+
+extension AddJournalViewController: UITextFieldDelegate {
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 
         self.view.endEditing(true)
 
         return true
     }
 }
-
-// Button Functions and others
 
 extension AddJournalViewController {
 
