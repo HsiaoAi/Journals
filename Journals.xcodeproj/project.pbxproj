@@ -25,6 +25,8 @@
 		87D0351F1FDA5EDC00F67520 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D0351E1FDA5EDC00F67520 /* DataSource.swift */; };
 		87D035231FDA632600F67520 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D035211FDA632600F67520 /* DetailViewController.swift */; };
 		87D035241FDA632600F67520 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D035221FDA632600F67520 /* DetailViewController.xib */; };
+		87EC54E91FDDA43C003112FD /* LandingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EC54E81FDDA43B003112FD /* LandingHeaderView.swift */; };
+		87EC54EB1FDDA454003112FD /* LandingHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87EC54EA1FDDA454003112FD /* LandingHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		87D0351E1FDA5EDC00F67520 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		87D035211FDA632600F67520 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		87D035221FDA632600F67520 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		87EC54E81FDDA43B003112FD /* LandingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingHeaderView.swift; sourceTree = "<group>"; };
+		87EC54EA1FDDA454003112FD /* LandingHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LandingHeaderView.xib; sourceTree = "<group>"; };
 		94DB7682141BB163A9B32227 /* Pods-Journals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journals.release.xcconfig"; path = "Pods/Target Support Files/Pods-Journals/Pods-Journals.release.xcconfig"; sourceTree = "<group>"; };
 		C41017E125A7EE405FC9DDDB /* Pods-Journals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journals.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Journals/Pods-Journals.debug.xcconfig"; sourceTree = "<group>"; };
 		CD807C13CD10F40B31C19E2E /* Pods_Journals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Journals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +126,8 @@
 				87D034F21FDA263A00F67520 /* LandingTableViewController.swift */,
 				87D035081FDA359400F67520 /* JournalTableViewCell.swift */,
 				87D035091FDA359400F67520 /* JournalTableViewCell.xib */,
+				87EC54E81FDDA43B003112FD /* LandingHeaderView.swift */,
+				87EC54EA1FDDA454003112FD /* LandingHeaderView.xib */,
 			);
 			path = Landing;
 			sourceTree = "<group>";
@@ -220,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87D035101FDA49C200F67520 /* AddJournalViewController.xib in Resources */,
+				87EC54EB1FDDA454003112FD /* LandingHeaderView.xib in Resources */,
 				87D034FB1FDA263A00F67520 /* LaunchScreen.storyboard in Resources */,
 				87D035241FDA632600F67520 /* DetailViewController.xib in Resources */,
 				87D034F81FDA263A00F67520 /* Assets.xcassets in Resources */,
@@ -304,6 +311,7 @@
 				87D035171FDA562500F67520 /* Journal.xcdatamodeld in Sources */,
 				87D0351D1FDA581900F67520 /* FetchResultController.swift in Sources */,
 				87D035071FDA311F00F67520 /* UIColorExtensions.swift in Sources */,
+				87EC54E91FDDA43C003112FD /* LandingHeaderView.swift in Sources */,
 				87D035231FDA632600F67520 /* DetailViewController.swift in Sources */,
 				87D034F31FDA263A00F67520 /* LandingTableViewController.swift in Sources */,
 				87D034F11FDA263A00F67520 /* AppDelegate.swift in Sources */,

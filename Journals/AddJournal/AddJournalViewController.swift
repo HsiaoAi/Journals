@@ -10,7 +10,7 @@ import UIKit
 import ChameleonFramework
 import CoreData
 
-class AddJournalViewController: UIViewController {
+class AddJournalViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var cancelButton: UIButton!
 

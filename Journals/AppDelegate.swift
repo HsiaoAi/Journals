@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
 
-        self.window?.rootViewController = navigationController
+        self.window?.rootViewController = landingTableViewController
 
         self.window?.makeKeyAndVisible()
 

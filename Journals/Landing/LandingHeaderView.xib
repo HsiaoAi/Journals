@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LandingHeaderView" customModule="Journals" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Journals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIe-lk-BkB">
+                    <rect key="frame" x="30" y="15" width="494" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSa-dU-QKe">
+                    <rect key="frame" x="536" y="3" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="NTF-o0-YOW"/>
+                        <constraint firstAttribute="height" constant="44" id="r25-wV-KH4"/>
+                    </constraints>
+                    <state key="normal" image="icon_plus"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="aSa-dU-QKe" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="A6P-JG-wt3"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="aSa-dU-QKe" secondAttribute="trailing" constant="20" id="MLA-lt-MIZ"/>
+                <constraint firstItem="XIe-lk-BkB" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="eMh-xj-gRg"/>
+                <constraint firstItem="XIe-lk-BkB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="efb-iB-X7g"/>
+                <constraint firstItem="aSa-dU-QKe" firstAttribute="leading" secondItem="XIe-lk-BkB" secondAttribute="trailing" constant="12" id="gKt-Eq-jNA"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="addButton" destination="aSa-dU-QKe" id="7xd-ml-XJZ"/>
+                <outlet property="titleLabel" destination="XIe-lk-BkB" id="UbZ-GZ-DiR"/>
+            </connections>
+            <point key="canvasLocation" x="25" y="26"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_plus" width="44" height="44"/>
+    </resources>
+</document>

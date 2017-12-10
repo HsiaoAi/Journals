@@ -21,25 +21,6 @@ class LandingTableViewController: UITableViewController {
 
     }()
 
-    // UI properties
-    lazy var navigationTitleLabel: UILabel = {
-
-        let label = UILabel()
-
-        label.text = "My Journals"
-
-        label.textAlignment = .center
-
-        label.textColor = UIColor.Custom.slate
-
-        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-
-        label.translatesAutoresizingMaskIntoConstraints = false
-
-        return label
-
-    }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -67,6 +48,12 @@ extension LandingTableViewController {
 
     func setupTableView() {
 
+        let headerView = LandingHeaderView.create()
+
+        headerView?.addButton.addTarget(self, action: #selector(addJournal), for: .touchUpInside)
+
+        self.tableView.tableHeaderView = headerView
+
         let nib = UINib(
             nibName: "JournalTableViewCell",
             bundle: nil
@@ -85,21 +72,21 @@ extension LandingTableViewController {
 
         self.tableView.showsVerticalScrollIndicator = false
 
-        self.tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 0, right: 0)
-
     }
 
     func setupNavigationBar() {
 
-        self.navigationController?.navigationBar.topItem?.titleView = self.navigationTitleLabel
+//        self.navigationController?.navigationBar.topItem?.titleView = self.navigationTitleLabel
+//
+//        let rightButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addJournal))
+//
+//        self.navigationItem.rightBarButtonItem = rightButtonItem
+//
+//        self.navigationController?.navigationBar.backgroundColor = UIColor.white
+//
+//        self.navigationController?.navigationBar.tintColor = UIColor.red
 
-        let rightButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addJournal))
-
-        self.navigationItem.rightBarButtonItem = rightButtonItem
-
-        self.navigationController?.navigationBar.backgroundColor = UIColor.white
-
-        self.navigationController?.navigationBar.tintColor = UIColor.red
+        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
 
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
 
