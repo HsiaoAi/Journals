@@ -81,7 +81,7 @@ class DataSource: NSObject, UITableViewDataSource {
 
         cell.photoImageView.image = image
 
-        cell.photoImageView.contentMode = .scaleToFill
+        cell.photoImageView.contentMode = .scaleAspectFill
 
         return cell
     }

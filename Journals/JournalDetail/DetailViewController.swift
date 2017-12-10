@@ -176,7 +176,7 @@ extension DetailViewController {
 
             self.photoImageView.image = image
 
-            self.photoImageView.contentMode = .scaleToFill
+            self.photoImageView.contentMode = .scaleAspectFill
 
             self.addPicLabel.text = ""
 
@@ -228,7 +228,7 @@ extension DetailViewController: UIImagePickerControllerDelegate, UINavigationCon
 
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
 
-            self.photoImageView.contentMode = .scaleToFill
+            self.photoImageView.contentMode = .scaleAspectFill
 
             self.pickedImage = pickedImage
 

@@ -181,7 +181,7 @@ extension AddJournalViewController: UIImagePickerControllerDelegate, UINavigatio
 
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
 
-            self.photoImageView.contentMode = .scaleToFill
+            self.photoImageView.contentMode = .scaleAspectFill
 
             self.pickedImage = pickedImage
 
