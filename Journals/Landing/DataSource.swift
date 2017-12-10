@@ -77,11 +77,11 @@ class DataSource: NSObject, UITableViewDataSource {
                 return cell
         }
 
-         print("Phoyo: \(imageData)")
-
         cell.photoImageView.image = image
 
         cell.photoImageView.contentMode = .scaleAspectFill
+
+        print(cell.frame)
 
         return cell
     }

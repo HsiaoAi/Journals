@@ -10,13 +10,13 @@ import UIKit
 
 class LandingHeaderView: UIView {
 
+    class var identifier: String { return String(describing: self) }
+
     @IBOutlet weak var titleLabel: UILabel!
 
     @IBOutlet weak var addButton: UIButton!
 
     override func awakeFromNib() {
-
-        print("HeaderView: \(String(describing: self))")
 
         super.awakeFromNib()
 
@@ -43,7 +43,7 @@ extension LandingHeaderView {
 
     class func create() -> LandingHeaderView? {
 
-        guard let nibView = UINib(nibName: "LandingHeaderView", bundle: nil).instantiate(withOwner: nil, options: nil).first as? LandingHeaderView else {
+        guard let nibView = UINib(nibName: self.identifier, bundle: nil).instantiate(withOwner: nil, options: nil).first as? LandingHeaderView else {
 
             return UIView() as? LandingHeaderView
         }

@@ -13,17 +13,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LandingHeaderView" customModule="Journals" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Journals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIe-lk-BkB">
-                    <rect key="frame" x="30" y="15" width="494" height="21"/>
+                    <rect key="frame" x="30" y="34" width="494" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSa-dU-QKe">
-                    <rect key="frame" x="536" y="3" width="44" height="44"/>
+                    <rect key="frame" x="536" y="24.5" width="44" height="44"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="44" id="NTF-o0-YOW"/>
                         <constraint firstAttribute="height" constant="44" id="r25-wV-KH4"/>
@@ -33,11 +33,12 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="aSa-dU-QKe" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="A6P-JG-wt3"/>
+                <constraint firstItem="XIe-lk-BkB" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="34" id="DUa-30-bRI"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="aSa-dU-QKe" secondAttribute="trailing" constant="20" id="MLA-lt-MIZ"/>
-                <constraint firstItem="XIe-lk-BkB" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="eMh-xj-gRg"/>
+                <constraint firstItem="aSa-dU-QKe" firstAttribute="centerY" secondItem="XIe-lk-BkB" secondAttribute="centerY" id="dTz-b3-T18"/>
                 <constraint firstItem="XIe-lk-BkB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="efb-iB-X7g"/>
                 <constraint firstItem="aSa-dU-QKe" firstAttribute="leading" secondItem="XIe-lk-BkB" secondAttribute="trailing" constant="12" id="gKt-Eq-jNA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="XIe-lk-BkB" secondAttribute="bottom" constant="12" id="t2O-Q4-qXN"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

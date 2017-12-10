@@ -72,6 +72,8 @@ extension LandingTableViewController {
 
         self.tableView.showsVerticalScrollIndicator = false
 
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+
     }
 
     func setupNavigationBar() {
