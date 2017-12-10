@@ -116,6 +116,8 @@ extension AddJournalViewController {
 
     func setupAllTextField() {
 
+        self.titleTextField.textColor = UIColor.Custom.slate
+
         self.titleTextField.delegate = self
 
         self.contentTextField.autocapitalizationType = .none
@@ -221,7 +223,7 @@ extension AddJournalViewController: UITextViewDelegate {
 
             textView.text = nil
 
-            self.contentTextField.textColor = UIColor.Custom.slate
+            self.contentTextField.textColor = UIColor.Custom.lightSlate
 
     }
 
@@ -269,8 +271,9 @@ extension AddJournalViewController {
         let createDate = NSDate()
 
         guard let journal = NSEntityDescription.insertNewObject(forEntityName: "Journal", into: managedObjectContext) as? Journal else {
-            print("here")
+
             return
+
         }
 
         journal.title = title

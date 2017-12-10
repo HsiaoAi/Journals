@@ -55,8 +55,6 @@ class DetailViewController: UIViewController {
             handler: {
                 _ in
 
-                print("photo")
-
                 self.imagePicker.sourceType = .photoLibrary
 
                 self.present(self.imagePicker, animated: true, completion: nil)
@@ -70,8 +68,6 @@ class DetailViewController: UIViewController {
             handler: {
 
                 _ in
-
-                print("camera")
 
                 self.imagePicker.sourceType = .camera
 
@@ -106,6 +102,8 @@ class DetailViewController: UIViewController {
 
         setupSelectedJournal()
 
+        setupContentTextField()
+
         self.imagePicker.delegate = self
 
     }
@@ -118,11 +116,13 @@ extension DetailViewController {
 
     func setupContentTextField() {
 
+        self.titleTextField.textColor = UIColor.Custom.slate
+
         self.titleTextField.delegate = self
 
         self.contentTextField.autocapitalizationType = .none
 
-        self.contentTextField.textColor = UIColor.Custom.slate
+        self.contentTextField.textColor = UIColor.Custom.lightSlate
 
         self.contentTextField.delegate = self
 

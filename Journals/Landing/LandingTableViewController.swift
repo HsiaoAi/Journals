@@ -26,8 +26,6 @@ class LandingTableViewController: UITableViewController {
 
         self.tableView.dataSource = dataSource
 
-        setupNavigationBar()
-
         setupTableView()
 
     }
@@ -76,25 +74,6 @@ extension LandingTableViewController {
 
     }
 
-    func setupNavigationBar() {
-
-//        self.navigationController?.navigationBar.topItem?.titleView = self.navigationTitleLabel
-//
-//        let rightButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addJournal))
-//
-//        self.navigationItem.rightBarButtonItem = rightButtonItem
-//
-//        self.navigationController?.navigationBar.backgroundColor = UIColor.white
-//
-//        self.navigationController?.navigationBar.tintColor = UIColor.red
-
-        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
-
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-
-    }
 }
 
 // MARK: - Table view heightForRowAt
@@ -103,13 +82,11 @@ extension LandingTableViewController {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+       // let contentOriginY = self.tableView.contentSize.height
 
-        let naviBarHeight = self.navigationController?.navigationBar.bounds.height ?? 0
+       //  let contentViewHeight = UIScreen.main.bounds.height - statusBarHeight - naviBarHeight
 
-        let contentViewHeight = UIScreen.main.bounds.height - statusBarHeight - naviBarHeight
-
-        return contentViewHeight / 3
+        return ( UIScreen.main.bounds.height - 90 ) / 3
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

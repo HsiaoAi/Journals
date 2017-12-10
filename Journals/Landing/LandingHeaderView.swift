@@ -33,7 +33,7 @@ class LandingHeaderView: UIView {
         titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
 
         addButton.imageView?.image = #imageLiteral(resourceName: "icon_plus").withRenderingMode(.alwaysTemplate)
-        
+
         addButton.imageView?.tintColor = UIColor.Custom.dustyOrange
 
     }

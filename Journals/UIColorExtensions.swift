@@ -20,6 +20,8 @@ extension UIColor {
 
         static let darkSlate = UIColor(red: 26 / 255, green: 34 / 255, blue: 38 / 255, alpha: 1)
 
+        static let lightSlate = UIColor(red: 131 / 255, green: 156 / 255, blue: 152 / 255, alpha: 1)
+
         static let blush = UIColor(red: 247 / 255, green: 174 / 255, blue: 163 / 255, alpha: 1)
 
     }
